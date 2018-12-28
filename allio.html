@@ -1,0 +1,58 @@
+<DOCTYPE !html> 
+<html>
+<head>  
+             <meta charset="utf-8"/>
+             <link rel="stylesheet" />
+            <title> Citation : le paradis sur la terre </title>
+         </head>
+        <body>
+			<form>
+				<p id="para"> Enter loan data </p>
+				<label> Amount of the loan </label>
+				<input id="aloan" type="tel" required/>
+				<br/><br/>
+				<label> Annual interest  </label>
+				<input id="ani" type="tel" required/>
+				<br/><br/>
+				<label> Repayment period </label>
+				<input id="repe" type="tel" required/>
+				<br/><br/>
+				<label> Zipeode (to find lender) </label>
+				<input id="zipe" type="tel" required/>
+				<br/><br/>
+				<label> Approximate payments </label>
+				<input id="envoyer" type="button" value="send"/>
+				
+			</form>
+			
+			<p id="mopa"> Monthly payments </p>
+			<p id="topa"> Total payment </p>
+			<p id="toin">Total interest</p>
+			
+			
+			<script>
+				function calculate(){
+					var total = ( par3.value*(Number(par1.value*par2.value/100)) +Number(par1.value));
+					var monthly = Number(total)/(12*Number(par3.value));
+					var totalin = Number(total) - Number(par1.value);
+					par5.innerHTML="Total payment $ " + total ;
+					par4.innerHTML="Monthly payment $ " + monthly ;
+					par6.innerHTML="Total interest $ " + totalin ;
+					
+				}
+				
+				par1 = document.getElementById('aloan');
+				par2 = document.getElementById('ani');
+				par3 = document.getElementById('repe');
+				par4 = document.getElementById('mopa');
+				par5 = document.getElementById('topa');
+				par6 = document.getElementById('toin');
+				
+				par7 = document.getElementById('envoyer');
+				
+				par7.addEventListener('click',calculate,false);
+				
+			</script>
+			
+	</body>
+</html>
